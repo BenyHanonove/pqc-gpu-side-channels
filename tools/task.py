@@ -23,7 +23,7 @@ BOARD_PATH = ROOT / "TASKS.md"
 FIELDS = ["id", "stage", "title", "due", "started", "finished", "hours", "note"]
 
 STAGES = {
-    "1": ("Stage 1 · Dissecting ML-KEM", "stage-1-mlkem/"),
+    "1": ("Stage 1 · The theory", "stage-1-mlkem/"),
     "2": ("Stage 2 · The NTT on a GPU", "stage-2-ntt-gpu/"),
     "3": ("Stage 3 · Side channels on GPUs", "stage-3-gpu-side-channels/"),
 }

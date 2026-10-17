@@ -7,8 +7,9 @@ Post-quantum key exchange is moving onto GPUs. NVIDIA ships ML-KEM and ML-DSA as
 CPUs, microcontrollers and FPGAs, but I found no published side-channel evaluation of an ML-KEM or
 ML-DSA implementation running on a GPU.
 
-This repository is where I close that gap step by step: first by taking the algorithm apart, then by
-implementing its core (the NTT) on a GPU, and finally by measuring whether, and how, it leaks.
+This repository is where I close that gap in three separate steps: first the theory behind the
+algorithms, then implementing their core (the NTT) on a GPU, and finally measuring whether, and how,
+it leaks.
 
 > **Simulation first.** Everything here runs in code and in a GPU simulator, with no lab equipment.
 > Validation on real GPUs comes later.
@@ -36,14 +37,14 @@ implementing its core (the NTT) on a GPU, and finally by measuring whether, and 
 - **NIST IR 8547** deprecates RSA and ECC from 2030 and disallows them from 2035.
 - Servers will run millions of PQC handshakes in batches, which is exactly the workload GPUs accelerate.
 
-*(Dates to be re-verified against the primary NIST/NSA sources; see Stage 1.)*
+*(Dates to be re-verified against the primary NIST/NSA sources; see Stage 1, source 10.)*
 
 ## Roadmap
 
 | Stage | Focus | Dates | Outcome |
 |---|---|---|---|
-| [**1 · Dissecting ML-KEM**](stage-1-mlkem/) | The algorithm end to end, and where every secret value lives in the code | 18 Oct – 7 Nov 2026 | Annotated data-flow map + video |
-| [**2 · The NTT on a GPU**](stage-2-ntt-gpu/) | A batched CUDA NTT for ML-KEM and ML-DSA, and which GPU optimisations matter | 8 Nov – 28 Nov 2026 | Working kernel in simulation + comparison table + video |
+| [**1 · The theory**](stage-1-mlkem/) | Lattices, Module-LWE, the CRYSTALS schemes and the NIST standards (reading only) | 18 Oct – 7 Nov 2026 | Paper summaries + explainer + video |
+| [**2 · The NTT on a GPU**](stage-2-ntt-gpu/) | Reference code walkthrough, then a batched CUDA NTT for ML-KEM and ML-DSA, and which GPU optimisations matter | 8 Nov – 28 Nov 2026 | Working kernel in simulation + comparison table + video |
 | [**3 · Side channels on GPUs**](stage-3-gpu-side-channels/) | GPU-specific leakage sources, a first leakage experiment, and the research proposal | 29 Nov – 26 Dec 2026 | First result + one-page proposal + video |
 
 Every task has a due date and a recorded start and finish time: see **[TASKS.md](TASKS.md)**.
@@ -54,7 +55,7 @@ Every task has a due date and a recorded start and finish time: see **[TASKS.md]
 .
 ├── README.md                     ← you are here
 ├── TASKS.md                      ← task board: due dates, start/finish times, duration
-├── stage-1-mlkem/                ← Stage 1: dissecting ML-KEM
+├── stage-1-mlkem/                ← Stage 1: the theory (reading only)
 ├── stage-2-ntt-gpu/              ← Stage 2: NTT on the GPU
 ├── stage-3-gpu-side-channels/    ← Stage 3: leakage experiments and proposal
 ├── docs/
