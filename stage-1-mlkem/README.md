@@ -1,12 +1,14 @@
-# Stage 1 · The Theory Behind ML-KEM and the CRYSTALS Family
+# Stage 1 · The Theory: From Secret Sharing to Kyber
 
 **18 Oct – 7 Nov 2026** · [← back to overview](../README.md)
 
 ## What this stage shows
 
-A solid theoretical understanding of Kyber and the CRYSTALS family: why lattice problems are believed
-to be hard, how Module-LWE turns that hardness into encryption, how Kyber grew out of NewHope, how
-its sibling Dilithium is built, and how both became the NIST standards ML-KEM and ML-DSA.
+The theory behind the thesis, told through one thread: **polynomials as the foundation of
+cryptography**. Shamir used polynomials to split a secret so that no single party learns it; Kyber
+uses polynomial rings to build encryption that a quantum computer cannot break. Between the two sit
+LWE, the hard problem behind Kyber, and the Fujisaki-Okamoto transform that makes Kyber CCA-secure,
+ending with the standard itself, FIPS 203 (ML-KEM).
 
 This stage is **reading and writing only**. No code, no implementation details, no side channels:
 those belong to Stage 2 and Stage 3.
@@ -15,36 +17,39 @@ those belong to Stage 2 and Stage 3.
 
 | Deliverable | Description |
 |---|---|
-| Paper summaries | One page per source, using the template below, in `summaries/` |
-| Explainer | 3–4 pages: *How ML-KEM and ML-DSA work, from lattices to the standard* |
+| Paper summaries | One page per paper, using the template below, in `summaries/` |
+| Explainer | 3–4 pages: *Polynomials as the foundation of cryptography, from Shamir to Kyber* |
 | Slides + video | 8 slides, 5–7 minute video |
 
 ## Reading list
 
-### Week 1 (18–24 Oct): Lattice foundations
+Six papers. Most are read **in part**: the table says what to read, what to skip, and why. Only the
+Kyber paper and FIPS 203 are read almost in full, because the whole thesis rests on them.
 
-| # | Source | Focus on | Time |
-|---|---|---|---|
-| 1 | [On Lattices, Learning with Errors, Random Linear Codes, and Cryptography](https://cims.nyu.edu/~regev/papers/qcrypto.pdf), Regev (J. ACM 2009) | The definition of LWE, the intuition behind the hardness reduction, the LWE public-key scheme | ~5 h |
-| 2 | [A Decade of Lattice Cryptography](https://eprint.iacr.org/2015/939), Peikert | The big picture: SIS, LWE, Ring-LWE, and how they relate | ~4 h |
-| 3 | [Worst-case to Average-case Reductions for Module Lattices](https://eprint.iacr.org/2012/090), Langlois & Stehlé | What Module-SIS and Module-LWE are, and why they sit between LWE and Ring-LWE | ~3 h |
+| # | Paper | Why it is here | Read | Skip | Time | Used again in |
+|---|---|---|---|---|---|---|
+| 1 | [How to Share a Secret](https://dl.acm.org/doi/10.1145/359168.359176), Shamir (CACM 1979) | How a polynomial of degree k−1 splits a secret into n shares: any k recover it, fewer reveal nothing | Everything (about two pages) | – | ~45 min (refresh) | **Stage 3**: masking, the main side-channel countermeasure, is secret sharing |
+| 2 | [Secure Order Based Voting Using Distributed Tallying](https://arxiv.org/abs/2205.10580), Tassa, Dery & Zamarin (JISA 2025) | Secret sharing and multiparty computation in a real system; where my interest in this field began | Introduction, security model, protocol overview, security analysis | MPC protocol details, experiments | ~2 h | Motivation: videos and the proposal |
+| 3 | [On Lattices, Learning with Errors, Random Linear Codes, and Cryptography](https://cims.nyu.edu/~regev/papers/qcrypto.pdf), Regev (J. ACM 2009) | The hard problem Kyber is built on | Introduction, the definition of LWE, the LWE public-key scheme | The quantum reduction proof | ~2 h | – |
+| 4 | [CRYSTALS-Kyber: a CCA-secure module-lattice-based KEM](https://eprint.iacr.org/2017/634) | The paper the thesis rests on | Almost everything: the CPA scheme, the CCA transform, parameters, security analysis | Implementation and performance sections | ~4 h | **Stage 2**: parameter choices shape the implementation |
+| 5 | [A Modular Analysis of the Fujisaki-Okamoto Transformation](https://eprint.iacr.org/2017/604), Hofheinz, Hövelmanns & Kiltz | What makes Kyber CCA-secure | Introduction and the definitions of the transforms, especially implicit rejection | All proofs | ~1.5 h | **Stage 3**: the re-encryption comparison in Decaps is a known leakage point |
+| 6 | [FIPS 203 (ML-KEM)](https://csrc.nist.gov/pubs/fips/203/final) | The official definition of what will be implemented and attacked | Overview, the K-PKE and ML-KEM algorithms, parameter sets, differences from Kyber (appendix) | The NTT section | ~3 h | **Stage 2**: the NTT section is read there |
 
-### Week 2 (25–31 Oct): From NewHope to Kyber, and the CRYSTALS family
+**Total:** about 14 hours of reading.
 
-| # | Source | Focus on | Time |
-|---|---|---|---|
-| 4 | [Post-Quantum Key Exchange – A New Hope](https://eprint.iacr.org/2015/1092), Alkim, Ducas, Pöppelmann & Schwabe (USENIX Security 2016) | Kyber's Ring-LWE predecessor: what it got right, and what Kyber changed by moving to Module-LWE | ~3 h |
-| 5 | [CRYSTALS-Kyber: a CCA-secure module-lattice-based KEM](https://eprint.iacr.org/2017/634) | The CPA-secure scheme, parameter choices, the move to CCA security | ~4 h |
-| 6 | [A Modular Analysis of the Fujisaki-Okamoto Transformation](https://eprint.iacr.org/2017/604), Hofheinz, Hövelmanns & Kiltz | How a CPA scheme becomes CCA-secure; implicit rejection | ~3 h |
-| 7 | [CRYSTALS-Dilithium: A Lattice-Based Digital Signature Scheme](https://eprint.iacr.org/2017/633) | Fiat-Shamir with aborts, and why signatures rely on Module-SIS as well | ~4 h |
+### Order
 
-### Week 3 (1–3 Nov): From CRYSTALS to the NIST standards
+| Week | Papers | The step in the story |
+|---|---|---|
+| 1 (18–24 Oct) | Shamir → Tassa → Regev | From a secret split by a polynomial to a hard problem built from noise |
+| 2 (25–31 Oct) | Kyber → FO transform | From the hard problem to a secure KEM |
+| 3 (1–7 Nov) | FIPS 203, then explainer, slides, video | From the paper to the standard |
 
-| # | Source | Focus on | Time |
-|---|---|---|---|
-| 8 | [FIPS 203 (ML-KEM)](https://csrc.nist.gov/pubs/fips/203/final) | The standardised algorithms and parameter sets; what changed from Kyber | ~4 h |
-| 9 | [FIPS 204 (ML-DSA)](https://csrc.nist.gov/pubs/fips/204/final) | Overview and parameter sets; what changed from Dilithium | ~2 h |
-| 10 | [NIST IR 8413-upd1](https://nvlpubs.nist.gov/nistpubs/ir/2022/NIST.IR.8413-upd1.pdf) | Why NIST selected Kyber and Dilithium over the other third-round candidates | ~2 h |
+### Deferred to later
+
+Useful background, not required for this stage: NewHope (Kyber's predecessor), NIST IR 8413 (why
+NIST chose Kyber), Peikert's survey, Langlois & Stehlé (Module-LWE), and Dilithium/FIPS 204 (the
+ML-DSA extension).
 
 ## Summary template
 
@@ -58,23 +63,22 @@ Each summary in `summaries/` answers the same five questions:
 
 ## Self-check questions
 
+- [ ] Why does a polynomial of degree k−1 need exactly k points to be recovered, and why do k−1 points reveal nothing?
+- [ ] Why is Shamir's scheme secure even against a quantum computer?
+- [ ] In the voting protocol, what does each tallier see, and what stays hidden?
 - [ ] What is LWE, and why does adding small noise turn an easy linear system into a hard one?
-- [ ] What do Ring-LWE and Module-LWE add, and what does each trade off?
-- [ ] Why did Kyber move from NewHope's Ring-LWE to Module-LWE?
 - [ ] How does a CPA-secure scheme differ from a CCA-secure one, and why does a KEM need CCA?
 - [ ] What does the Fujisaki-Okamoto transform do, and what is implicit rejection?
-- [ ] Why does Dilithium need "aborts" when signing?
 - [ ] What are the ML-KEM-512/768/1024 parameter sets, and what does each parameter change?
-- [ ] Why did NIST choose Kyber and Dilithium?
 
 ## Tasks
 
 | ID | Task | Due |
 |---|---|---|
-| S1.1 | Lattice foundations: sources 1–3 + summaries | 24 Oct |
-| S1.2 | NewHope, Kyber and the FO transform: sources 4–6 + summaries | 28 Oct |
-| S1.3 | Dilithium: source 7 + summary | 31 Oct |
-| S1.4 | Standards and NIST selection: sources 8–10 + summaries | 3 Nov |
+| S1.1 | Shamir and Tassa et al. + summaries | 21 Oct |
+| S1.2 | Regev + summary | 24 Oct |
+| S1.3 | Kyber and the FO transform + summaries | 31 Oct |
+| S1.4 | FIPS 203 + summary | 3 Nov |
 | S1.5 | Explainer (3–4 pages) | 5 Nov |
 | S1.6 | Slides | 6 Nov |
 | S1.7 | Video | 7 Nov |
@@ -83,7 +87,7 @@ Live status: [TASKS.md](../TASKS.md)
 
 ## Definition of done
 
-- Every source has a one-page summary in `summaries/`.
+- Every paper has a one-page summary in `summaries/`.
 - I can answer every self-check question without notes.
 - The explainer reads end to end without referring to code.
 - The video is uploaded and is at most 7 minutes long.

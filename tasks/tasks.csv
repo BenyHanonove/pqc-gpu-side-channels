@@ -1,8 +1,8 @@
 id,stage,title,due,started,finished,hours,note
-S1.1,1,"Lattice foundations: Regev, Peikert, Langlois-Stehle + summaries",2026-10-24,,,,
-S1.2,1,"NewHope, Kyber and the FO transform + summaries",2026-10-28,,,,
-S1.3,1,Dilithium + summary,2026-10-31,,,,
-S1.4,1,"Standards and NIST selection: FIPS 203, FIPS 204, NIST IR 8413 + summaries",2026-11-03,,,,
+S1.1,1,Shamir and Tassa et al. + summaries,2026-10-21,,,,
+S1.2,1,Regev + summary,2026-10-24,,,,
+S1.3,1,Kyber and the FO transform + summaries,2026-10-31,,,,
+S1.4,1,FIPS 203 + summary,2026-11-03,,,,
 S1.5,1,Explainer (3-4 pages),2026-11-05,,,,
 S1.6,1,Stage 1 slides,2026-11-06,,,,
 S1.7,1,Stage 1 video,2026-11-07,,,,

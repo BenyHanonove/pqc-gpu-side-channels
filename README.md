@@ -43,7 +43,7 @@ it leaks.
 
 | Stage | Focus | Dates | Outcome |
 |---|---|---|---|
-| [**1 · The theory**](stage-1-mlkem/) | Lattices and Module-LWE, Kyber and the CRYSTALS family, the NIST standards (reading only) | 18 Oct – 7 Nov 2026 | Paper summaries + explainer + video |
+| [**1 · The theory**](stage-1-mlkem/) | From Shamir's secret sharing to Kyber: LWE, the FO transform and FIPS 203 (reading only) | 18 Oct – 7 Nov 2026 | Six paper summaries + explainer + video |
 | [**2 · The NTT on a GPU**](stage-2-ntt-gpu/) | Reference code walkthrough, then a batched CUDA NTT for ML-KEM and ML-DSA, and which GPU optimisations matter | 8 Nov – 28 Nov 2026 | Working kernel in simulation + comparison table + video |
 | [**3 · Side channels on GPUs**](stage-3-gpu-side-channels/) | GPU-specific leakage sources, a first leakage experiment, and the research proposal | 29 Nov – 26 Dec 2026 | First result + one-page proposal + video |
 

@@ -31,6 +31,9 @@ Links in [docs/related-work.md](../docs/related-work.md).
 7. **Template and CPA on Pair-Pointwise Multiplication** (2025): a recent attack on a batched step.
 8. **Rendered Insecure** (CCS 2018): the attacker model on a shared GPU.
 
+Revisit from Stage 1: **Shamir 1979** (masking is secret sharing applied to every secret value) and
+the **FO transform** (the re-encryption comparison in Decaps).
+
 Columns for each paper: target · channel · attacker model · traces/measurements needed ·
 countermeasure · does it transfer to a GPU?
 

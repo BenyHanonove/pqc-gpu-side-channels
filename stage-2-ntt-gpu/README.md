@@ -25,11 +25,12 @@ optimisations.
 
 | # | Source | Focus on | Time |
 |---|---|---|---|
-| 1 | [A Complete Beginner Guide to the NTT](https://eprint.iacr.org/2024/585) | Negacyclic convolution, NTT/INTT, the toy examples (work them by hand) | ~4 h |
-| 2 | [Note on NTTs for Implementers](https://eprint.iacr.org/2026/1546), Bo-Yin Yang | Butterflies, twisting, incomplete NTTs: why Kyber has 7 layers | ~3 h |
-| 3 | [A note on the implementation of the NTT](https://eprint.iacr.org/2017/727.pdf), Michael Scott | Lazy reduction and other implementation trade-offs | ~1 h |
-| 4 | [HI-Kyber](https://eprint.iacr.org/2023/1194) | How the NTT is split across GPU threads and blocks | ~2 h |
-| 5 | [CUDA C++ Programming Guide](https://docs.nvidia.com/cuda/cuda-c-programming-guide/) | Programming model, warps, shared memory, `__shfl_sync` | ~3 h |
+| 1 | [FIPS 203](https://csrc.nist.gov/pubs/fips/203/final), NTT section | The section skipped in Stage 1: the NTT and the multiplication of NTT representations as specified | ~1 h |
+| 2 | [A Complete Beginner Guide to the NTT](https://eprint.iacr.org/2024/585) | Negacyclic convolution, NTT/INTT, the toy examples (work them by hand) | ~4 h |
+| 3 | [Note on NTTs for Implementers](https://eprint.iacr.org/2026/1546), Bo-Yin Yang | Butterflies, twisting, incomplete NTTs: why Kyber has 7 layers | ~3 h |
+| 4 | [A note on the implementation of the NTT](https://eprint.iacr.org/2017/727.pdf), Michael Scott | Lazy reduction and other implementation trade-offs | ~1 h |
+| 5 | [HI-Kyber](https://eprint.iacr.org/2023/1194) | How the NTT is split across GPU threads and blocks | ~2 h |
+| 6 | [CUDA C++ Programming Guide](https://docs.nvidia.com/cuda/cuda-c-programming-guide/) | Programming model, warps, shared memory, `__shfl_sync` | ~3 h |
 
 ## Reference code walkthrough
 

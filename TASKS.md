@@ -10,10 +10,10 @@
 
 | ID | Task | Due | Started | Finished | Elapsed | Hours | Status |
 |---|---|---|---|---|---|---|---|
-| S1.1 | Lattice foundations: Regev, Peikert, Langlois-Stehle + summaries | 24 Oct |  |  |  |  | ⬜ Not started |
-| S1.2 | NewHope, Kyber and the FO transform + summaries | 28 Oct |  |  |  |  | ⬜ Not started |
-| S1.3 | Dilithium + summary | 31 Oct |  |  |  |  | ⬜ Not started |
-| S1.4 | Standards and NIST selection: FIPS 203, FIPS 204, NIST IR 8413 + summaries | 03 Nov |  |  |  |  | ⬜ Not started |
+| S1.1 | Shamir and Tassa et al. + summaries | 21 Oct |  |  |  |  | ⬜ Not started |
+| S1.2 | Regev + summary | 24 Oct |  |  |  |  | ⬜ Not started |
+| S1.3 | Kyber and the FO transform + summaries | 31 Oct |  |  |  |  | ⬜ Not started |
+| S1.4 | FIPS 203 + summary | 03 Nov |  |  |  |  | ⬜ Not started |
 | S1.5 | Explainer (3-4 pages) | 05 Nov |  |  |  |  | ⬜ Not started |
 | S1.6 | Stage 1 slides | 06 Nov |  |  |  |  | ⬜ Not started |
 | S1.7 | Stage 1 video | 07 Nov |  |  |  |  | ⬜ Not started |
