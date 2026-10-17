@@ -100,6 +100,7 @@ Shamir 1979 → Tassa, Dery & Zamarin → Regev (LWE) → Kyber → FO transform
 
 - Repository content is in **English**; planning discussions are in Hebrew.
 - Every task is opened and closed with `tools/task.py`, then committed, so git records when work was done.
+- All work is committed directly to `main` and pushed; no feature branches (single-author project).
 - Signing commits (SSH or GPG) is recommended so GitHub marks them *Verified*.
 
 ## 7. Related groundwork
