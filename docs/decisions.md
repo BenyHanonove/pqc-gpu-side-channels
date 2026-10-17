@@ -7,14 +7,28 @@ re-deriving it. Read it first when starting a new working session.
 
 ---
 
-## 1. The research question
+## 1. The research direction
 
-> Do GPU implementations of ML-KEM leak secret information through GPU-specific channels
-> (warp divergence, memory behaviour, software power telemetry such as NVML), and how can they be
-> protected?
+> **Side-channel security of post-quantum cryptography (ML-KEM, ML-DSA) on GPUs**: a platform it is
+> already being deployed on, but where, as far as I found, it has not been evaluated.
 
-**Working thesis title:** *Side-Channel Leakage of ML-KEM on SIMT Accelerators: A Cross-Vendor Model
-with an NVIDIA Case Study*
+**Decision: a sharp direction, not a fixed question.** The first contact with potential advisors is
+an email and a conversation: what I know, what I have read, what interests me, and what interests
+them. A fixed question would leave no room for that, so the direction and the gap stay fixed, and
+the exact question is narrowed together with an advisor. Open questions to bring to that
+conversation:
+
+- Which GPU-specific channels (warp divergence, memory behaviour, software power telemetry) matter
+  for ML-KEM at all, given that its NTT accesses memory independently of the secret?
+- Is software telemetry such as NVML enough for an unprivileged attacker, given how coarsely it samples?
+- Do CPU-side countermeasures (constant-time code, masking) survive SIMT compilation and execution?
+- How far can leakage be evaluated without lab equipment, and where does simulation stop being enough?
+
+The scope choices below (algorithm, platform, method, attacker model) are **current working
+assumptions**: they make the three stages concrete, and any of them can change after that conversation.
+
+**Placeholder thesis title** (for orientation only, not used in the email): *Side-Channel Leakage of
+ML-KEM on SIMT Accelerators*
 
 ## 2. Scope decisions
 
@@ -66,10 +80,10 @@ Three stages with a **strict separation**: each stage has its own reading list a
 |---|---|---|
 | [1 · The theory](../stage-1-mlkem/) | Reading and writing only: no code, no NTT, no side channels | 18 Oct – 7 Nov 2026 |
 | [2 · The NTT on a GPU](../stage-2-ntt-gpu/) | All implementation: reference code walkthrough, NTT theory, C and CUDA NTT, Accel-Sim, optimisation variants | 8 – 28 Nov 2026 |
-| [3 · Side channels on GPUs](../stage-3-gpu-side-channels/) | Literature on side channels, kernel analysis, TVLA-style experiment, one-page proposal | 29 Nov – 26 Dec 2026 |
+| [3 · Side channels on GPUs](../stage-3-gpu-side-channels/) | Literature on side channels, kernel analysis, TVLA-style experiment, one-page direction memo | 29 Nov – 26 Dec 2026 |
 
 Each stage ends with slides and a 5–8 minute video. The three videos, this repository and the
-one-page proposal form the package sent to potential thesis advisors.
+one-page direction memo form the package sent to potential thesis advisors.
 
 ### Stage 1 reading choices
 

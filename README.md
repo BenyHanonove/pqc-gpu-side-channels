@@ -7,7 +7,7 @@ Post-quantum key exchange is moving onto GPUs. NVIDIA ships ML-KEM and ML-DSA as
 CPUs, microcontrollers and FPGAs, but I found no published side-channel evaluation of an ML-KEM or
 ML-DSA implementation running on a GPU.
 
-This repository is where I close that gap in three separate steps: first the theory behind the
+This repository is my groundwork toward that gap, in three separate steps: first the theory behind the
 algorithms, then implementing their core (the NTT) on a GPU, and finally measuring whether, and how,
 it leaks.
 
@@ -16,11 +16,21 @@ it leaks.
 
 ---
 
-## Research question
+## Research direction
 
-> Do GPU implementations of ML-KEM leak secret information through GPU-specific channels
-> (warp divergence, memory behaviour, software power telemetry such as NVML), and how can they be
-> protected?
+> **Side-channel security of post-quantum cryptography (ML-KEM, ML-DSA) on GPUs**: a platform it is
+> already being deployed on, but where, as far as I found, it has not been evaluated.
+
+The direction is fixed; the exact question is not. These are the open questions I want to work
+through with a thesis advisor:
+
+- Which GPU-specific channels (warp divergence, memory behaviour, software power telemetry) matter
+  for ML-KEM at all, given that its NTT accesses memory independently of the secret?
+- Is software telemetry such as NVML enough for an unprivileged attacker, given how coarsely it samples?
+- Do CPU-side countermeasures (constant-time code, masking) survive SIMT compilation and execution?
+- How far can leakage be evaluated without lab equipment, and where does simulation stop being enough?
+
+**Current working assumptions** (starting points, open to change):
 
 | | |
 |---|---|
@@ -45,7 +55,7 @@ it leaks.
 |---|---|---|---|
 | [**1 · The theory**](stage-1-mlkem/) | From Shamir's secret sharing to Kyber: LWE, the FO transform and FIPS 203 (reading only) | 18 Oct – 7 Nov 2026 | Six paper summaries + explainer + video |
 | [**2 · The NTT on a GPU**](stage-2-ntt-gpu/) | Reference code walkthrough, then a batched CUDA NTT for ML-KEM and ML-DSA, and which GPU optimisations matter | 8 Nov – 28 Nov 2026 | Working kernel in simulation + comparison table + video |
-| [**3 · Side channels on GPUs**](stage-3-gpu-side-channels/) | GPU-specific leakage sources, a first leakage experiment, and the research proposal | 29 Nov – 26 Dec 2026 | First result + one-page proposal + video |
+| [**3 · Side channels on GPUs**](stage-3-gpu-side-channels/) | GPU-specific leakage sources, a first leakage experiment, and a direction memo for discussion | 29 Nov – 26 Dec 2026 | First result + one-page direction memo + video |
 
 Every task has a due date and a recorded start and finish time: see **[TASKS.md](TASKS.md)**.
 
@@ -57,7 +67,7 @@ Every task has a due date and a recorded start and finish time: see **[TASKS.md]
 ├── TASKS.md                      ← task board: due dates, start/finish times, duration
 ├── stage-1-mlkem/                ← Stage 1: the theory (reading only)
 ├── stage-2-ntt-gpu/              ← Stage 2: NTT on the GPU
-├── stage-3-gpu-side-channels/    ← Stage 3: leakage experiments and proposal
+├── stage-3-gpu-side-channels/    ← Stage 3: leakage experiments and direction memo
 ├── docs/
 │   ├── decisions.md              ← project context: what was decided and why
 │   └── related-work.md           ← literature map and the research gap

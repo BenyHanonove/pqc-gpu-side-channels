@@ -6,7 +6,8 @@
 
 That ML-KEM on a GPU has **leakage sources a CPU does not have**: warp divergence, memory-access
 behaviour, and software-readable power telemetry (NVML). The stage ends with one measured result from
-simulation and a one-page research proposal built on it.
+simulation and a one-page direction memo built on it: a starting point for a conversation with a
+potential advisor, not a closed plan.
 
 ## Deliverables
 
@@ -15,7 +16,7 @@ simulation and a one-page research proposal built on it.
 | Literature table | 8 papers, fixed columns (see below) |
 | Kernel analysis | Every branch, division or memory address that depends on a secret |
 | First experiment | TVLA-style t-test on simulated cycles and power, with one graph |
-| Research proposal | One page, in English |
+| Direction memo | One page, in English: first result, open questions, working assumptions |
 | Slides + video | 8 slides, 6–8 minute video |
 
 ## Literature, in priority order
@@ -61,15 +62,18 @@ countermeasure · does it transfer to a GPU?
 > Hamming-weight leakage. This is stated explicitly in the results, and it is exactly why the thesis
 > needs real measurements through NVML.
 
-## Research proposal outline
+## Direction memo outline
 
-1. **Problem:** PQC is moving to GPUs (cuPQC, liboqs) and its leakage there is unevaluated.
-2. **Attacker model:** a co-located tenant reading NVML without root and submitting ciphertexts for batched decapsulation.
-3. **Hypothesis and research question.**
-4. **Method:** simulation → measurement on a cloud GPU → countermeasures.
-5. **Preliminary result:** the graph from this stage.
-6. **Extensions:** ML-DSA, other GPU vendors.
-7. **Responsible disclosure.**
+1. **Direction and gap:** PQC is moving to GPUs (cuPQC, liboqs) and its leakage there is unevaluated.
+2. **Preliminary result:** the graph from this stage, and what it does and does not show.
+3. **Open questions:** the list in the [overview](../README.md#research-direction), updated with
+   what this stage taught me.
+4. **Current working assumptions**, each open to change:
+   - attacker model: a co-located tenant reading NVML without root and submitting ciphertexts for
+     batched decapsulation;
+   - method: simulation → measurement on a cloud GPU → countermeasures.
+5. **Possible extensions:** ML-DSA, other GPU vendors.
+6. **Responsible disclosure.**
 
 ## Tasks
 
@@ -78,7 +82,7 @@ countermeasure · does it transfer to a GPU?
 | S3.1 | Literature table (8 papers) | 7 Dec |
 | S3.2 | Kernel analysis (PTX/SASS, Owl) | 11 Dec |
 | S3.3 | TVLA-style experiment in simulation | 16 Dec |
-| S3.4 | One-page research proposal | 19 Dec |
+| S3.4 | One-page direction memo | 19 Dec |
 | S3.5 | Slides | 22 Dec |
 | S3.6 | Video | 26 Dec |
 
@@ -87,7 +91,7 @@ Live status: [TASKS.md](../TASKS.md)
 ## Definition of done
 
 - One graph shows in numbers whether the kernel leaks, and the deliberately leaky variant is detected.
-- The proposal fits on one page and states the limits of the simulation.
+- The memo fits on one page, states the limits of the simulation, and ends with open questions.
 - All code and experiments in this folder re-run from the README.
 - All three videos are uploaded.
 

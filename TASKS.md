@@ -38,6 +38,6 @@
 | S3.1 | Literature table (8 papers) | 07 Dec |  |  |  |  | ⬜ Not started |
 | S3.2 | Kernel analysis (PTX/SASS, Owl) | 11 Dec |  |  |  |  | ⬜ Not started |
 | S3.3 | TVLA-style experiment in simulation | 16 Dec |  |  |  |  | ⬜ Not started |
-| S3.4 | One-page research proposal | 19 Dec |  |  |  |  | ⬜ Not started |
+| S3.4 | One-page direction memo | 19 Dec |  |  |  |  | ⬜ Not started |
 | S3.5 | Stage 3 slides | 22 Dec |  |  |  |  | ⬜ Not started |
 | S3.6 | Stage 3 video | 26 Dec |  |  |  |  | ⬜ Not started |
