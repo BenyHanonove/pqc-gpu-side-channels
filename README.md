@@ -59,6 +59,7 @@ Every task has a due date and a recorded start and finish time: see **[TASKS.md]
 ├── stage-2-ntt-gpu/              ← Stage 2: NTT on the GPU
 ├── stage-3-gpu-side-channels/    ← Stage 3: leakage experiments and proposal
 ├── docs/
+│   ├── decisions.md              ← project context: what was decided and why
 │   └── related-work.md           ← literature map and the research gap
 ├── tasks/
 │   └── tasks.csv                 ← source of truth for the task board
@@ -81,6 +82,10 @@ git commit -am "S1.1 done: theory notes"   # the commit is the proof
 
 Signing commits (SSH or GPG key) makes GitHub mark each one as *Verified*, which ties every
 timestamp to my key.
+
+## Decisions and context
+
+What was decided in planning, and why: [docs/decisions.md](docs/decisions.md).
 
 ## Related work
 
