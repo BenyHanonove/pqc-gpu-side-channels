@@ -34,16 +34,16 @@ it leaks.
 - NIST finalised **FIPS 203 (ML-KEM)** and **FIPS 204 (ML-DSA)** in August 2024.
 - NSA's **CNSA 2.0** requires ML-KEM-1024 and ML-DSA-87 for national security systems, with
   category deadlines between 2030 and 2033.
-- **NIST IR 8547** deprecates RSA and ECC from 2030 and disallows them from 2035.
+- [**NIST IR 8547**](https://csrc.nist.gov/pubs/ir/8547/ipd) deprecates RSA and ECC from 2030 and disallows them from 2035.
 - Servers will run millions of PQC handshakes in batches, which is exactly the workload GPUs accelerate.
 
-*(Dates to be re-verified against the primary NIST/NSA sources; see Stage 1, source 10.)*
+*(Dates to be re-verified against the primary NIST and NSA sources.)*
 
 ## Roadmap
 
 | Stage | Focus | Dates | Outcome |
 |---|---|---|---|
-| [**1 · The theory**](stage-1-mlkem/) | Lattices, Module-LWE, the CRYSTALS schemes and the NIST standards (reading only) | 18 Oct – 7 Nov 2026 | Paper summaries + explainer + video |
+| [**1 · The theory**](stage-1-mlkem/) | Lattices and Module-LWE, Kyber and the CRYSTALS family, the NIST standards (reading only) | 18 Oct – 7 Nov 2026 | Paper summaries + explainer + video |
 | [**2 · The NTT on a GPU**](stage-2-ntt-gpu/) | Reference code walkthrough, then a batched CUDA NTT for ML-KEM and ML-DSA, and which GPU optimisations matter | 8 Nov – 28 Nov 2026 | Working kernel in simulation + comparison table + video |
 | [**3 · Side channels on GPUs**](stage-3-gpu-side-channels/) | GPU-specific leakage sources, a first leakage experiment, and the research proposal | 29 Nov – 26 Dec 2026 | First result + one-page proposal + video |
 
