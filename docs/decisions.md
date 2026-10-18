@@ -113,7 +113,7 @@ by the language; they depend on the compiler and flags**, the same root cause as
 
 ## 8. Open items
 
-- [ ] Start S1.1 (Shamir and Tassa et al.), due 21 Oct
+- [x] Start S1.1 (Shamir and Tassa et al.), due 21 Oct: Shamir read 18 Oct
 - [ ] Re-verify CNSA 2.0 and NIST IR 8547 dates at the primary sources
 - [ ] Read the hardening section of the cuPQC documentation
 - [ ] Forward citations of Owl, Rendered Insecure and Part-time Power Measurements

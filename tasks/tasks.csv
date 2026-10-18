@@ -1,5 +1,5 @@
 id,stage,title,due,started,finished,hours,note
-S1.1,1,Shamir and Tassa et al. + summaries,2026-10-21,,,,
+S1.1,1,Shamir and Tassa et al. + summaries,2026-10-21,2026-10-18T17:08+03:00,,,Shamir read; Tassa et al. and summaries pending
 S1.2,1,Regev + summary,2026-10-24,,,,
 S1.3,1,Kyber and the FO transform + summaries,2026-10-31,,,,
 S1.4,1,FIPS 203 + summary,2026-11-03,,,,
