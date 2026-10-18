@@ -10,7 +10,7 @@
 
 | ID | Task | Due | Started | Finished | Elapsed | Hours | Status |
 |---|---|---|---|---|---|---|---|
-| S1.1 | Shamir and Tassa et al. + summaries<br><sub>Shamir read; Tassa et al. and summaries pending</sub> | 21 Oct | 18 Oct 17:08 |  |  |  | ⏳ In progress |
+| S1.1 | Shamir and Tassa et al. + summaries<br><sub>Shamir read 2026-10-18 17:11; Tassa et al. and summaries pending</sub> | 21 Oct | 18 Oct 17:08 |  |  |  | ⏳ In progress |
 | S1.2 | Regev + summary | 24 Oct |  |  |  |  | ⬜ Not started |
 | S1.3 | Kyber and the FO transform + summaries | 31 Oct |  |  |  |  | ⬜ Not started |
 | S1.4 | FIPS 203 + summary | 03 Nov |  |  |  |  | ⬜ Not started |
