@@ -1,6 +1,6 @@
 # Secure Order Based Voting Using Distributed Tallying: Tassa, Dery & Zamarin (JISA 2025)
 
-[← back to Stage 1](../README.md) · [Paper](https://arxiv.org/abs/2205.10580) · Read 2026-10-21
+[← back to Stage 1](../README.md) · [Paper](https://arxiv.org/abs/2205.10580) · Read over two days, finished 2026-10-21
 
 **Problem.** Compute the winner of an election under an order-based rule (Copeland, Maximin) while
 revealing **nothing but the result**. Anonymity is not enough: in a small election, a full tally
