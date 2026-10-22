@@ -1,7 +1,7 @@
 id,stage,title,due,started,finished,hours,note
 S1.1,1,Shamir and Tassa et al. + summaries,2026-10-21,2026-10-18T17:08+03:00,2026-10-21T15:00+03:00,,"Shamir read 2026-10-18 17:11, Tassa et al. read over two days, finished 2026-10-21 14:59; both summaries in stage-1-mlkem/summaries/"
 S1.2,1,Regev + summary,2026-10-24,2026-10-21T15:08+03:00,2026-10-22T17:03+03:00,4,Regev read 2026-10-21 15:08 to 2026-10-22 17:03 (about 26 h); summary in stage-1-mlkem/summaries/
-S1.3,1,Kyber and the FO transform + summaries,2026-10-31,,,,
+S1.3,1,Kyber and the FO transform + summaries,2026-10-31,2026-10-22T17:07+03:00,,,
 S1.4,1,FIPS 203 + summary,2026-11-03,,,,
 S1.5,1,Explainer (3-4 pages),2026-11-05,,,,
 S1.6,1,Stage 1 slides,2026-11-06,,,,
