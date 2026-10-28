@@ -2,6 +2,10 @@
 
 **Side-channel leakage of ML-KEM (and ML-DSA) on GPU accelerators — MSc thesis groundwork**
 
+> 🚧 **Work in progress toward an MSc thesis.** I'm currently in Stage 1 (the theory). There are no
+> experimental results yet: the GPU kernel and the leakage experiments come in Stages 2 and 3
+> (see the [roadmap](#roadmap)).
+
 Post-quantum key exchange is moving onto GPUs. NVIDIA ships ML-KEM and ML-DSA as a GPU library
 (cuPQC), and it is being integrated into liboqs. Side-channel attacks on ML-KEM are well studied on
 CPUs, microcontrollers and FPGAs, but I found no published side-channel evaluation of an ML-KEM or
